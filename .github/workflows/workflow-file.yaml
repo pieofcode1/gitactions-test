@@ -48,7 +48,15 @@ jobs:
 
       - run: echo "This job's status is ${{ job.status }}."
 
-      
+  Second-Job:
+    name: The Second Job running on another runner
+    runs-on: ubuntu-latest
+    needs: Example-Actions-Job
+    steps: 
+    
+      # Ruuner env
+      - run: echo "This job is running on a ${{ runner.os }} server hosted by Github."
+
       
       
 
